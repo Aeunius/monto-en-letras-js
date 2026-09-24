@@ -10,6 +10,10 @@ cuyo resultado reproduce.
 
 ## [Sin publicar]
 
+## [1.0.0] - 2026-09-23
+
+Primera versión. Da el mismo texto que `aeunius/laravel-numero-a-letras` 1.0.0.
+
 ### Agregado
 
 - `convertir()` y `Conversor`: montos a letras con el formato de la SUNAT
@@ -28,4 +32,5 @@ cuyo resultado reproduce.
   mismos mensajes que el paquete PHP.
 - Build ESM y CommonJS con tipos, sin dependencias.
 
-[Sin publicar]: https://github.com/Aeunius/monto-en-letras-js/commits/main
+[Sin publicar]: https://github.com/Aeunius/monto-en-letras-js/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Aeunius/monto-en-letras-js/releases/tag/v1.0.0

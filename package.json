@@ -1,6 +1,6 @@
 {
   "name": "@aeunius/monto-en-letras",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Convierte montos a letras con el formato de los comprobantes de la SUNAT: 1250.50 → MIL DOSCIENTOS CINCUENTA CON 50/100 SOLES",
   "keywords": [
     "numero a letras",
