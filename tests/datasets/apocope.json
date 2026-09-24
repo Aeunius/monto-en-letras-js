@@ -1,0 +1,13 @@
+[
+  [1, "un"],
+  [21, "veintiún"],
+  [31, "treinta y un"],
+  [101, "ciento un"],
+  [121, "ciento veintiún"],
+  [1001, "mil un"],
+  [21021, "veintiún mil veintiún"],
+  [1000001, "un millón un"],
+  [2, "dos"],
+  [11, "once"],
+  [1000, "mil"]
+]

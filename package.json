@@ -1,0 +1,62 @@
+{
+  "name": "@aeunius/monto-en-letras",
+  "version": "0.0.0",
+  "description": "Convierte montos a letras con el formato de los comprobantes de la SUNAT: 1250.50 → MIL DOSCIENTOS CINCUENTA CON 50/100 SOLES",
+  "keywords": [
+    "numero a letras",
+    "monto en letras",
+    "numeros a palabras",
+    "sunat",
+    "facturacion electronica",
+    "peru",
+    "soles"
+  ],
+  "license": "MIT",
+  "author": "Alejandro Gonzales <27040276+Aeunius@users.noreply.github.com>",
+  "homepage": "https://github.com/Aeunius/monto-en-letras-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aeunius/monto-en-letras-js.git"
+  },
+  "bugs": "https://github.com/Aeunius/monto-en-letras-js/issues",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check",
+    "format": "biome check --write",
+    "datasets": "node scripts/datasets.mjs",
+    "datasets:check": "node scripts/datasets.mjs --check",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@types/node": "^22.20.4",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.1"
+  }
+}
