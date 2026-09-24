@@ -9,7 +9,7 @@ RUN    = docker run --rm -i $(TTY) -u $$(id -u):$$(id -g) \
          -v $(CURDIR):/app -v $(CACHE):/tmp/cache -e npm_config_cache=/tmp/cache \
          -e npm_config_update_notifier=false -w /app node:24-alpine
 
-.PHONY: help install test typecheck build format lint datasets npm shell
+.PHONY: help install test typecheck build format lint datasets publicar npm shell
 
 help:           ## Lista los comandos
 	@grep -hE '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-10s %s\n", $$1, $$2}'
@@ -37,6 +37,11 @@ lint:           ## Revisa formato y lint sin cambiar nada (como el CI)
 
 datasets:       ## Descarga los datasets del paquete PHP (make datasets a="--check")
 	$(RUN) node scripts/datasets.mjs $(a)
+
+# Solo para la primera versión: las siguientes las publica el CI al crear un
+# release. El login vive dentro del contenedor y se pierde al salir.
+publicar:       ## Publica en npm a mano, con login y 2FA
+	$(RUN) sh -c 'export HOME=/tmp && npm ci && npm test && npm login && npm publish --access public'
 
 npm: | $(CACHE) ## make npm c="install -D paquete"
 	$(RUN) npm $(c)

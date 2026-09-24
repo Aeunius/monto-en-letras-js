@@ -3,9 +3,9 @@ name: publish
 # Publica en npm al crear un release en GitHub. El tag tiene que coincidir con
 # la versión de package.json (v1.0.0 ↔ 1.0.0).
 #
-# Autenticación: publicación confiable (OIDC) si está configurada en npmjs.com
-# para este repo y este workflow; si no, el secreto NPM_TOKEN. En los dos casos
-# el paquete sale con provenance.
+# Se autentica con publicación confiable (OIDC), configurada en npmjs.com para
+# este repo, este workflow y el environment npm: no hay tokens. El paquete sale
+# con provenance.
 
 on:
   release:
@@ -44,5 +44,3 @@ jobs:
       - run: npm run datasets:check
 
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
